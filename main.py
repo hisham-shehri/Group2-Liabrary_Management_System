@@ -22,11 +22,13 @@ def register_new_member(lib):
         lib.register_member(Member(name, int(m_id)))
 
 def borrow_book_feature(lib):
+    lib.show_all()
     isbn = input("Enter book ISBN to borrow: ")
     m_id = input("Enter member ID: ")
     lib.borrow_book(isbn, m_id)
 
 def return_book_feature(lib):
+    lib.show_all()
     isbn = input("Enter book ISBN to return: ")
     m_id = input("Enter member ID: ")
     lib.return_book(isbn, m_id)
@@ -42,7 +44,8 @@ def show_statistics(lib):
     lib.show_statistics()
 
 def delete_book_feature(lib):
-    isbn = input("Enter the ISBN of the book to delete: ")
+    lib.show_all()
+    isbn = input("\nEnter the ISBN of the book to delete: ")
     lib.delete_book(isbn)
 
 
@@ -59,8 +62,9 @@ def main():
         library.books.append(Book(title, author, year, isbn, genre))
         library.genres.add(genre)
 
-    library.members[101] = StudentMember("Sara Al-Otaibi", 101)
-    library.members[102] = StudentMember("Fahad Al-Dossari", 102)
+    library.members[101] = StudentMember("Saad Al-Otaibi", 101)
+    library.members[102] = StudentMember("Hesham Al-Khamees", 102)
+    library.members[103] = StudentMember("Hisham Al-Shehri", 103)
     library.members[201] = StaffMember("Dr. Ahmad", 201)
     library.members[202] = StaffMember("Prof. Noura", 202)
     print("Ready-made data loaded successfully!\n")
